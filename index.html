@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Contacts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">
+            My Contacts
+        </h1>
+        <input type="text" id="filterInput" placeholder="Search names...">
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Akansha</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Aman</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Arush</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Aryan</a>
+            </li>
+            <li class="collection-header">
+                <h5>B</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Babita</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Barkha</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bhatinda</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bharti</a>
+            </li>
+            <li class="collection-header">
+                <h5>C</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Catty</a>
+            </li>
+            <li class="collection-header">
+                <h5>D</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Dharam</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Drishti</a>
+            </li>
+            <li class="collection-header">
+                <h5>E</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Elvish</a>
+            </li>
+            <li class="collection-header">
+                <h5>F</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Farman</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Francis</a>
+            </li>
+            <li class="collection-header">
+                <h5>G</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Granth</a>
+            </li>
+            <li class="collection-header">
+                <h5>H</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Harsh</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Himanshu</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // Get input element
+        let filterInput = document.getElementById('filterInput');
+        // Add event listener
+        filterInput.addEventListener('keyup',filterNames);
+
+        function filterNames(){
+            // Get value of input
+            let filterValue= document.getElementById('filterInput').value.toUpperCase();
+            // Get names ul
+            let ul=document.getElementById('names');
+            // Get lis from ul
+            let li = ul.querySelectorAll('li.collection-item');
+            // Loop through collection-item lis
+            for(let i=0;i<li.length;i++){
+                let a = li[i].getElementsByTagName('a')[0];
+                // If matched
+                if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1){
+                   li[i].style.display=''; 
+                }
+                else{
+                    li[i].style.display='none';
+                }
+
+            }
+        }
+    </script>
+
+</body>
+</html>
