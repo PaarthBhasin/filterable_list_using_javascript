@@ -1,3 +1,2 @@
 # filterable_list_using_javascript
-
-##Hosted on netlify: https://filterablelistusingjavascriptpb.netlify.app
+Hosted on netlify: https://filterablelistusingjavascriptpb.netlify.app
